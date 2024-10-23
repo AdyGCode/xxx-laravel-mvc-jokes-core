@@ -23,7 +23,7 @@
             </x-primary-link-button>
         </header>
 
-        <x-flash-message :data="session()"/>
+{{--        <x-flash-message :data="session()"/>--}}
 
         <div class="flex flex-col flex-wrap my-4 mt-8">
             <section class="grid grid-cols-1 gap-4 px-4 mt-4 sm:px-8">
@@ -51,7 +51,7 @@
                                         Nickname
                                     </x-input-label>
                                     <x-text-input id="name" name="name" value=""/>
-                                    <x-input-error :messages="" class="mt-2"/>
+                                    <x-input-error :messages="1" class="mt-2"/>
                                 </div>
 
                                 <div class="flex flex-col my-2">
@@ -59,7 +59,7 @@
                                         Given Name
                                     </x-input-label>
                                     <x-text-input id="given_name" name="given_name" value=""/>
-                                    <x-input-error :messages="" class="mt-2"/>
+                                    <x-input-error :messages="1" class="mt-2"/>
                                 </div>
 
                                 <div class="flex flex-col my-2">
@@ -67,7 +67,7 @@
                                         Family Name
                                     </x-input-label>
                                     <x-text-input id="family_ame" name="family_name" value=""/>
-                                    <x-input-error :messages="" class="mt-2"/>
+                                    <x-input-error :messages="1" class="mt-2"/>
                                 </div>
 
                                 <div class="flex flex-col my-2">
@@ -75,7 +75,7 @@
                                         Email
                                     </x-input-label>
                                     <x-text-input id="email" name="email" value=""/>
-                                    <x-input-error :messages="" class="mt-2"/>
+                                    <x-input-error :messages="1" class="mt-2"/>
                                 </div>
 
                                 <div class="flex flex-col my-2">
@@ -83,7 +83,7 @@
                                         Password
                                     </x-input-label>
                                     <x-text-input id="password" name="password"/>
-                                    <x-input-error :messages="" class="mt-2"/>
+                                    <x-input-error :messages="1" class="mt-2"/>
                                 </div>
 
                                 <div class="flex flex-col my-2">

@@ -80,9 +80,9 @@
                         <tfoot>
                         <tr class="bg-zinc-100">
                             <td colspan="5" class="px-6 py-2">
-                                @if( $users->hasPages() )
-                                    {{ $users->links() }}
-                                @elseif( $users->total() === 0 )
+                                @if( true)
+                                    users links
+                                @elseif( true)
                                     <p class="text-xl">No users found</p>
                                 @else
                                     <p class="py-2 text-zinc-800 text-sm">All users shown</p>
