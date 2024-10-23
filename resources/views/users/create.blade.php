@@ -23,13 +23,15 @@
             </x-primary-link-button>
         </header>
 
-{{--        <x-flash-message :data="session()"/>--}}
+        @auth
+            <x-flash-message :data="session()"/>
+        @endauth
 
         <div class="flex flex-col flex-wrap my-4 mt-8">
             <section class="grid grid-cols-1 gap-4 px-4 mt-4 sm:px-8">
 
                 <section class="min-w-full items-center bg-zinc-50 border border-zinc-600 rounded overflow-hidden">
-                    <form action="users store"
+                    <form action="{{ route('users.store') }}"
                           method="POST"
                           class="flex gap-4">
 
@@ -39,7 +41,7 @@
                             <header
                                 class="border-b border-neutral-200 bg-zinc-800 font-medium text-white dark:border-white/10">
                                 <p class="col-span-1 px-6 py-4 border-b border-zinc-200 dark:border-white/10">
-                                    "Enter new user's details
+                                    Enter new user's details
                                 </p>
                             </header>
 
@@ -50,40 +52,39 @@
                                     <x-input-label for="name">
                                         Nickname
                                     </x-input-label>
-                                    <x-text-input id="name" name="name" value=""/>
-                                    <x-input-error :messages="1" class="mt-2"/>
+                                    <x-text-input id="name" name="name" value="{{ old('name') }}"/>
+                                    <x-input-error :messages="$errors->get('name')" class="mt-2"/>
                                 </div>
 
                                 <div class="flex flex-col my-2">
                                     <x-input-label for="given_name">
                                         Given Name
                                     </x-input-label>
-                                    <x-text-input id="given_name" name="given_name" value=""/>
-                                    <x-input-error :messages="1" class="mt-2"/>
+                                    <x-text-input id="given_name" name="given_name" value="{{ old('given_name') }}"/>
+                                    <x-input-error :messages="$errors->get('given_name')" class="mt-2"/>
                                 </div>
 
                                 <div class="flex flex-col my-2">
                                     <x-input-label for="family_name">
                                         Family Name
                                     </x-input-label>
-                                    <x-text-input id="family_ame" name="family_name" value=""/>
-                                    <x-input-error :messages="1" class="mt-2"/>
+                                    <x-text-input id="family_ame" name="family_name" value="{{ old('family_name') }}"/>
+                                    <x-input-error :messages="$errors->get('family_name')" class="mt-2"/>
                                 </div>
 
                                 <div class="flex flex-col my-2">
                                     <x-input-label for="email">
                                         Email
                                     </x-input-label>
-                                    <x-text-input id="email" name="email" value=""/>
-                                    <x-input-error :messages="1" class="mt-2"/>
+                                    <x-text-input id="email" name="email" value="{{ old('email') }}"/>
+                                    <x-input-error :messages="$errors->get('email')" class="mt-2"/>
                                 </div>
 
                                 <div class="flex flex-col my-2">
                                     <x-input-label for="password">
                                         Password
                                     </x-input-label>
-                                    <x-text-input id="password" name="password"/>
-                                    <x-input-error :messages="1" class="mt-2"/>
+                                    <x-text-input type="password" id="password" name="password"/>
                                 </div>
 
                                 <div class="flex flex-col my-2">
@@ -91,6 +92,7 @@
                                         Confirm password
                                     </x-input-label>
                                     <x-text-input id="password_confirmation" name="password_confirmation"/>
+                                    <x-input-error :messages="$errors->get('password')" class="mt-2"/>
                                 </div>
                             </section>
 

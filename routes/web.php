@@ -18,6 +18,7 @@ Route::get('/dashboard', function () {
     ->name('dashboard');
 
 Route::resource('users', UserController::class);
+//    ->only(['index','edit','update','destroy']);
 
 
 Route::middleware('auth')->group(function () {
